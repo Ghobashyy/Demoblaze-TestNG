@@ -7,15 +7,15 @@ import pages.SignUpPage;
 
 public class InValidSignUp extends BaseSteps {
     @Test
-    public void testsignupwithinvalidcredential(){
-       SignUpPage signUpPage = homepage.clickonsignup();
-       signUpPage.enterinvalidsignupusername("MostafaGhobashy");
-       signUpPage.enterinvalidsignuppassword("Ghobash11");
-       signUpPage.clickonsignupbutton();
-       String actualresult = signUpPage.getsignupalerttext();
-       String expectedresult = "This user already exist.";
-        Assert.assertTrue(actualresult.contains(expectedresult));
-        System.out.println(actualresult);
-       signUpPage.acceptalert();
+    public void testSignupWithInvalidCredential(){
+       SignUpPage signUpPage = homepage.clickOnSignUp();
+       signUpPage.enterInvalidSignupUsername("MostafaGhobashy");
+       signUpPage.enterInvalidSignupPassword("Ghobash11");
+       signUpPage.clickOnSignupButton();
+       String actualResult = signUpPage.getSignupAlertText();
+       String expectedResult = "This user already exist.";
+        Assert.assertTrue(actualResult.contains(expectedResult));
+        System.out.println(actualResult);
+       signUpPage.acceptAlert();
     }
 }

@@ -8,20 +8,20 @@ import pages.PlaceOrderPage;
 
 public class PlaceOrderTest extends BaseSteps {
     @Test
-    public void placeorder() throws InterruptedException {
-        CartPage cartPage = homepage.clickoncart();
+    public void placeOrder() throws InterruptedException {
+        CartPage cartPage = homepage.clickOnCart();
         Thread.sleep(1000);
-        PlaceOrderPage placeOrderPage = cartPage.clickonplaceorder();
+        PlaceOrderPage placeOrderPage = cartPage.clickOnPlaceOrder();
         Thread.sleep(1000);
-        placeOrderPage.entername("Mostafa Ghobashy");
-        placeOrderPage.entercountry("Egypt");
-        placeOrderPage.entercity("Cairo");
-        placeOrderPage.entercreditcard("41115986322520");
-        placeOrderPage.entermonth("12");
-        placeOrderPage.enteryear("2024");
-        placeOrderPage.clickonpurchasebutton();
-        String actualresult = placeOrderPage.successpurchase();
-        String expectedresult = "Thank you for your purchase!";
-        Assert.assertTrue(actualresult.contains(expectedresult));
+        placeOrderPage.enterName("Mostafa Ghobashy");
+        placeOrderPage.enterCountry("Egypt");
+        placeOrderPage.enterCity("Cairo");
+        placeOrderPage.enterCreditCard("41115986322520");
+        placeOrderPage.enterMonth("12");
+        placeOrderPage.enterYear("2024");
+        placeOrderPage.clickOnPurchaseButton();
+        String actualResult = placeOrderPage.successPurchaseText();
+        String expectedResult = "Thank you for your purchase!";
+        Assert.assertTrue(actualResult.contains(expectedResult));
     }
 }

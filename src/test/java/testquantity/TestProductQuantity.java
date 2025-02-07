@@ -5,27 +5,26 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.LapTopPage;
-import pages.Product1Page;
+import pages.FirstProductPage;
 
 public class TestProductQuantity extends BaseSteps {
     @Test
-    public void tessst() throws InterruptedException {
-        LapTopPage lapTopPage = homepage.clickonlaptops();
+    public void testQuantity() throws InterruptedException {
+        LapTopPage lapTopPage = homepage.clickOnLaptops();
         Thread.sleep(1000);
-        Product1Page product1Page = lapTopPage.clickonproduct1();
+        FirstProductPage firstProductPage = lapTopPage.clickOnFirstProduct();
         Thread.sleep(1000);
-        product1Page.addproduct1tocart();
+        firstProductPage.addFirstProductToCart();
         Thread.sleep(1000);
-        product1Page.acceptproduct1alert();
+        firstProductPage.acceptFirstProductAlert();
         Thread.sleep(1000);
-        product1Page.addproduct1tocart();
+        firstProductPage.addFirstProductToCart();
         Thread.sleep(1000);
-        CartPage cartPage = product1Page.acceptproduct1alert2();
+        CartPage cartPage = firstProductPage.acceptFirstProductSecondAlert();
         Thread.sleep(1000);
-        cartPage.clickoncart();
+        cartPage.clickOnCart();
         Thread.sleep(2000);
-        int actualresult = cartPage.getquantity();
-        Assert.assertEquals(actualresult, 2);
-        System.out.println(actualresult);
+        int actualResult = cartPage.getQuantity();
+        Assert.assertEquals(actualResult, 2);
     }
 }

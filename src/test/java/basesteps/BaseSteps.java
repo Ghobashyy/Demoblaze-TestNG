@@ -16,18 +16,18 @@ public class BaseSteps {
     public HomePage homepage;
 
     @BeforeClass
-    public void openbrowser(){
+    public void openBrowser(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         homepage = new HomePage(driver);
     }
     @BeforeMethod
-    public void openhomepage(){
+    public void openHomePage(){
         driver.get("https://demoblaze.com/index.html");
     }
     @AfterClass
-    public void closebrowser(){
+    public void closeBrowser(){
         driver.quit();
     }
 }

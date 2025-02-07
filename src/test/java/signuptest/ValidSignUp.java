@@ -7,15 +7,15 @@ import pages.SignUpPage;
 
 public class ValidSignUp extends BaseSteps {
     @Test
-    public void testsignupwithvalidcredential(){
-     SignUpPage signUpPage = homepage.clickonsignup();
-     signUpPage.entersignupusername();
-     signUpPage.entersignuppassword();
-     signUpPage.clickonsignupbutton();
-     String actualresult = signUpPage.getsignupalerttext();
-     String expectedresult = "Sign up successful.";
-        Assert.assertTrue(actualresult.contains(expectedresult));
-        System.out.println(actualresult);
-     signUpPage.acceptalert();
+    public void testSignupWithValidCredential(){
+     SignUpPage signUpPage = homepage.clickOnSignUp();
+     signUpPage.enterSignupUsername();
+     signUpPage.enterSignupPassword();
+     signUpPage.clickOnSignupButton();
+     String actualResult = signUpPage.getSignupAlertText();
+     String expectedResult = "Sign up successful.";
+        Assert.assertTrue(actualResult.contains(expectedResult));
+        System.out.println(actualResult);
+     signUpPage.acceptAlert();
     }
 }

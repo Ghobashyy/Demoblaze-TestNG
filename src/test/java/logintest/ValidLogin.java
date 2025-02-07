@@ -7,15 +7,14 @@ import pages.LogInPage;
 
 public class ValidLogin extends BaseSteps {
     @Test
-    public void testloginwithvalidcredential() throws InterruptedException {
-       LogInPage logInPage = homepage.clickonlogin();
-       logInPage.enterloginusername("MostafaGhobashy");
-       logInPage.enterloginpassword("Ghobash11");
-       logInPage.clickonloginbutton();
-       Thread.sleep(2000);
-       String actualresult = logInPage.getloginusertext();
-       String expectedresult = "Welcome MostafaGhobashy";
-        Assert.assertTrue(actualresult.contains(expectedresult));
-        System.out.println(actualresult);
+    public void testLoginWithValidCredential() throws InterruptedException {
+       LogInPage logInPage = homepage.clickOnLogIn();
+       logInPage.enterLoginUsername("MostafaGhobashy");
+       logInPage.enterLoginPassword("Ghobash11");
+       logInPage.clickOnLoginButton();
+       String actualResult = logInPage.getLoginUserText();
+       String expectedResult = "Welcome MostafaGhobashy";
+        Assert.assertTrue(actualResult.contains(expectedResult));
+        System.out.println(actualResult);
     }
 }
